@@ -1,8 +1,8 @@
 {
   "name": "vscode-nvm",
   "displayName": "vscode nvm switcher",
-  "description": "nvmrc integration switcher nvm nvm-switcher",
-  "version": "0.0.1",
+  "description": "nodejs version auto switcher based on nvm",
+  "version": "0.0.2",
   "license": "MIT",
   "author": {
     "name": "nojsja"

@@ -4,7 +4,7 @@ Vscode plugin that use nvm to switch node version according to `.nvmrc` file
 
 ## Features
 
-This is a work in progress, it is only tested in macOS at the moment
+> Test on windows/linux/macos
 
 - [x] launch `nvm use` command in integrated terminals to automatically change node version
 - [ ] launch scripts with the correct node version
@@ -20,8 +20,8 @@ This is a work in progress, it is only tested in macOS at the moment
 
 ### Example of `.nvmrc` file
 
-```
-v10.14.0
+```bash
+v14.17.6
 ```
 
 ## Known Issues
@@ -30,10 +30,14 @@ No issue known ATM
 
 ## TODO
 
-- complete all features described above
-- write tests
+- Complete all features described above
+- Write tests
 
 ## Release Notes
+
+### 0.0.2
+
+- Fix bug on windows
 
 ### 0.0.1
 

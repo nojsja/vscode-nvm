@@ -18,13 +18,11 @@ export function activate(context: vscode.ExtensionContext) {
   if (terminals.length) {
     // console.log("Found opened terminals, let's change node version");
     terminals.forEach(function switchNode(t: vscode.Terminal) {
-      t.sendText('nvm use');
       use(t);
     });
   }
   (<any>vscode.window).onDidOpenTerminal((e: vscode.Terminal) => {
     // console.log('Terminal opened: ');
-    e.sendText('nvm use');
     use(e);
   });
 }
