@@ -1,17 +1,17 @@
 {
   "name": "vscode-nvm",
-  "displayName": "vscode nvm integration",
-  "description": "nvmrc integration",
+  "displayName": "vscode nvm switcher",
+  "description": "nvmrc integration switcher nvm nvm-switcher",
   "version": "0.0.1",
   "license": "MIT",
   "author": {
-    "name": "abumalick"
+    "name": "nojsja"
   },
   "repository": {
-    "url": "git@github.com:abumalick/vscode-nvm.git",
+    "url": "https://github.com/nojsja/vscode-nvm.git",
     "type": "git"
   },
-  "publisher": "abumalick",
+  "publisher": "nojsja",
   "engines": {
     "vscode": "^1.29.0"
   },
@@ -28,6 +28,8 @@
   "scripts": {
     "vscode:prepublish": "yarn run compile",
     "compile": "tsc -p ./",
+    "package": "yarn vsce package",
+    "publish": "yarn vsce publish",
     "watch": "tsc -watch -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "yarn run compile && node ./node_modules/vscode/bin/test"
@@ -38,6 +40,6 @@
     "tslint": "^5.8.0",
     "typescript": "^3.1.4",
     "vsce": "^1.53.2",
-    "vscode": "^1.1.25"
+    "vscode": "^1.1.37"
   }
 }
