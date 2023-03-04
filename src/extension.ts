@@ -1,18 +1,32 @@
 'use strict';
 import * as vscode from 'vscode';
 
-function use(x: vscode.Terminal) {
-  var isWin = process.platform === "win32";
-  if (isWin) {
-    x.sendText(`nvm use $(Get-Content .nvmrc).replace( 'v', '' )`);
-  }
-  else {
-    x.sendText('nvm use');
+async function executableIsAvailable(name: string) {
+  command = `which ${name}`
+  const { code } = await TerminalWrapper.execInTerminal(command).waitForResult();
+  return !code
+}
+
+async function use(x: vscode.Terminal) {
+  if (await executableIsAvailable("fnm")) {
+    x.sendText('fnm use');
+  } else if (await executableIsAvailable("nvm")) {
+    var isWin = process.platform === "win32";
+    if (isWin) {
+      x.sendText(`nvm use $(Get-Content .nvmrc).replace( 'v', '' )`);
+    }
+    else {
+      x.sendText('nvm use');
+    }
+  } else {
+    vscode.window.showErrorMessage(
+      "either 'nvm' or 'fnm' is required."
+    );
   }
 }
 
-export function activate(context: vscode.ExtensionContext) {
-  console.log('Congratulations, your extension "vscode-nvm" is now active!');
+export async function activate(context: vscode.ExtensionContext) {
+  console.log('Congratulations, your extension "vscode-nvm-fnm" is now active!');
 
   const terminals = (<any>vscode.window).terminals;
   if (terminals.length) {

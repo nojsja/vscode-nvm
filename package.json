@@ -1,15 +1,14 @@
 {
-  "name": "vscode-nvm",
-  "displayName": "vscode nvm switcher",
-  "description": "nodejs version auto switcher based on nvm",
-  "version": "0.0.2",
+  "name": "vscode-nvm-fnm",
+  "displayName": "vscode nvm/fnm switcher",
+  "description": "nodejs version auto switcher based using nvm/fnm",
+  "version": "0.0.3",
   "license": "MIT",
   "author": {
     "name": "nojsja"
   },
   "repository": {
-    "url": "https://github.com/nojsja/vscode-nvm.git",
-    "type": "git"
+    "url": "https://github.com/MichaelSp/vscode-nvm-fnm.git"
   },
   "publisher": "nojsja",
   "engines": {
