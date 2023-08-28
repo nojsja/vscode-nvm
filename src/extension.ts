@@ -4,7 +4,8 @@ import * as vscode from 'vscode';
 function use(x: vscode.Terminal) {
   var isWin = process.platform === "win32";
   if (isWin) {
-    x.sendText(`nvm use $(Get-Content .nvmrc).replace( 'v', '' )`);
+    x.sendText(`if ((node -v).replace( 'v', '' ) -ne $(Get-Content .nvmrc).replace( 'v', '' )){ nvm use $(Get-Content .nvmrc).replace( 'v', ''
+        ) }`);
   }
   else {
     x.sendText('nvm use');
